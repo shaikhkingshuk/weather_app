@@ -5,9 +5,10 @@ const searchBox = document.querySelector(".search_box input");
 const searchBtn = document.querySelector(".search_box button");
 const styleBg = document.querySelector(".bg");
 const weatherIcon = document.querySelector(".immg img");
+document.querySelector(".city_default").innerHTML = "(Default)";
 
 async function checkWeather(city) {
-  //console.log(city);
+  console.log(city);
   const response = await fetch(
     "https://api.openweathermap.org/data/2.5/weather?q=" +
       city +
@@ -23,7 +24,7 @@ async function checkWeather(city) {
 
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".temp").innerHTML =
-      /*"Current temperature : " +*/ data.main.temp;
+      /*"Current temperature : " +*/ data.main.temp + "°C";
     document.querySelector(".text_t").innerHTML =
       "Sky looks : " + data.weather[0].description;
     document.querySelector(".humid_t").innerHTML =
@@ -33,9 +34,6 @@ async function checkWeather(city) {
     document.querySelector(".feels_like_t").innerHTML =
       "Real feel : " + data.main.feels_like;
 
-    styleBg.style.backgroundImage =
-      "url('https://source.unsplash.com/1600x900/?" + city + "')";
-    //console.log(styleBg.style.backgroundImage);
     document.querySelector(".immg img").src =
       "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
   }
@@ -43,11 +41,13 @@ async function checkWeather(city) {
 
 searchBtn.addEventListener("click", () => {
   checkWeather(searchBox.value);
+  document.querySelector(".city_default").innerHTML = "";
 });
 
 searchBox.addEventListener("keyup", (e) => {
   if (e.keyCode === 13) {
     checkWeather(searchBox.value);
+    document.querySelector(".city_default").innerHTML = "";
   }
 });
 

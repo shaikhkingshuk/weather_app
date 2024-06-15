@@ -5,22 +5,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bg">
+    <div class="bgn">
+        <div class="bg">
         <div class="box">
         <div class="search_box">
             <input type="text" value="" placeholder="Enter the city name" spellcheck="false"></input>
             <button><img src="/img_part/s_icon.png"/></button>
         </div>
         <div class="weather_info">
-            <h1 class="city">kitchener</h1>
-            <div class="temp">51C</div>
+            <div class="city_name">
+               <h1><span class="city">(City name)</span></h1> 
+            <span class="city_default">Default</span>
+            </div>
+            <div class="temp">0°C</div>
             <div class="immg"><img src="https://openweathermap.org/img/wn/10d@2x.png"/></div>
             <div class="sky">
                 <div class="sky_i">
                     <img src="/img_part/sky.png">
                 </div>
                 <div class="text_t">
-                    Sky looks : Cloudy 
+                    Sky looks : none
                 </div>
             </div>
             <div class="humid">
@@ -28,7 +32,7 @@
                     <img src="/img_part/humid.png">
                 </div>
                 <div class="humid_t">
-                    Humidy: 60
+                    Humidy: 0
                 </div>
                 <span>%</span>
             </div>
@@ -37,7 +41,7 @@
                     <img src="/img_part/airspeed.png">
                 </div>
                 <div class="wind_speed_t">
-                    wind speed: 6.2
+                    wind speed: 0
                 </div>
                 <span>&nbsp;km/h</span>
             </div>
@@ -46,13 +50,16 @@
                     <img src="/img_part/feeling.png">
                 </div>
                 <div class="feels_like_t">
-                    32
+                    Real feel: 0
                 </div>
                 <span>°C</span>
             </div>
         </div>
         </div>
     </div>
+    </div>
     <script src="script_file.js"></script>
 </body>
 </html>
+
+
